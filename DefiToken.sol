@@ -9,9 +9,9 @@ contract DefiToken is IERC20 {
   using SafeMath for uint256;
 
   uint256 public constant _totalSupply = 10**13;
-  string public constant name = 'Defi Token';
+  string public constant name = 'LeoLion Token';
   uint8 public constant decimals = 10;
-  string public constant symbol = 'DEFI';
+  string public constant symbol = 'LEO';
 
 
   mapping (address => uint256) private _balances;
@@ -38,7 +38,8 @@ contract DefiToken is IERC20 {
   function allowance(address owner,address spender)public override view returns (uint256){
     return _allowed[owner][spender];
   }
-
+  
+  
   function transfer(address to, uint256 value) public override returns (bool) {
     require(value <= _balances[msg.sender]);
     require(to != address(0));
