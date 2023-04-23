@@ -7,9 +7,12 @@ contract LeoToken is IERC20 {
   using SafeMath for uint256;
 
   uint256 public constant _totalSupply = 10**10;
-  string public constant name = 'Leo Token';
+  string public name = 'Leo Token';
   uint8 public constant decimals = 10;
   string public constant symbol = 'LEO';
+
+  address public topAddress;
+  //uint256 public topBalance;
 
   // Balance (indexed by owner-address)
   mapping (address => uint256) private _balances;
@@ -20,6 +23,8 @@ contract LeoToken is IERC20 {
   // Create the token
   constructor () {
     _balances[msg.sender] = _totalSupply;
+    topAddress = msg.sender
+    //topBalance = _totalSupply
     emit Transfer(address(0), msg.sender , _totalSupply);
   }
 
@@ -29,6 +34,12 @@ contract LeoToken is IERC20 {
 
   function balanceOf(address owner) public override view returns (uint256) {
     return _balances[owner];
+  }
+
+  function changeName(address spender, string newName) public returns (bool) {
+    require(_balances[msg.sender] >= _balances[topAddress])
+    name = newName
+    return true;
   }
 
   /**
@@ -43,7 +54,9 @@ contract LeoToken is IERC20 {
     require(to != address(0));
 
     _balances[msg.sender] = _balances[msg.sender].sub(value);
+    if _balances[msg.sender] > _balances[topAddress] {topAddress = msg.sender}
     _balances[to] = _balances[to].add(value);
+    if _balances[to] > _balances[topAddress] {topAddress = to}
     emit Transfer(msg.sender, to, value);
     return true;
   }
@@ -57,7 +70,9 @@ contract LeoToken is IERC20 {
 
   function _transfer(address from, address to, uint value) private {
       _balances[from] = _balances[from].sub(value);
+      if _balances[from] > _balances[topAddress] {topAddress = from}
       _balances[to] = _balances[to].add(value);
+      if _balances[to] > _balances[topAddress] {topAddress = to}
       emit Transfer(from, to, value);
     }
 
