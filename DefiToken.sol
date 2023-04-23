@@ -18,7 +18,7 @@ contract DefiToken is IERC20 {
 
   mapping (address => mapping (address => uint256)) private _allowed;
 
-
+  // Token constructor
   constructor () {
     _balances[msg.sender] = _totalSupply;
     emit Transfer(address(0), msg.sender , _totalSupply);
