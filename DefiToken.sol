@@ -9,17 +9,16 @@ contract DefiToken is IERC20 {
   using SafeMath for uint256;
 
   uint256 public constant _totalSupply = 10**13;
-  string public constant name = 'LeoLion Token';
+  string public constant name = 'Defi Token';
   uint8 public constant decimals = 10;
-  string public constant symbol = 'LEO';
+  string public constant symbol = 'DEFI';
 
 
   mapping (address => uint256) private _balances;
 
   mapping (address => mapping (address => uint256)) private _allowed;
 
-  // Token constructor
-  constructor () {
+   constructor () {
     _balances[msg.sender] = _totalSupply;
     emit Transfer(address(0), msg.sender , _totalSupply);
   }
