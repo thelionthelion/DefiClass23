@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.10+commit.fc410830"
+		"version": "0.6.12+commit.27d51765"
 	},
 	"language": "Solidity",
 	"output": {
@@ -9,19 +9,6 @@
 				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "GetWeth",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -51,6 +38,130 @@
 			},
 			{
 				"inputs": [],
+				"name": "getBalances",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "pair",
+						"type": "address"
+					}
+				],
+				"name": "getPoolReserves",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "pair",
+						"type": "address"
+					}
+				],
+				"name": "getPools",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getRouterAllowances",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "leoToken",
 				"outputs": [
 					{
@@ -64,7 +175,33 @@
 			},
 			{
 				"inputs": [],
+				"name": "pairWETHLeo",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "router",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "wallet",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -104,7 +241,7 @@
 		"compilationTarget": {
 			"myContract.sol": "myContract"
 		},
-		"evmVersion": "london",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -116,6 +253,62 @@
 		"remappings": []
 	},
 	"sources": {
+		"ERC20.sol": {
+			"keccak256": "0x184e57396bed858422576247ce471933d3c40c888f4b190ce4d1d215091a2d7c",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://0e469ba02535cf1bfe1424f062c90cd9936e5369f1f90580ba71c53872f9c758",
+				"dweb:/ipfs/QmSBEJyLkXTtCQWA8zkt95fsi6V7UbqE8VANhYn5ZjCyDJ"
+			]
+		},
+		"Pair.sol": {
+			"keccak256": "0x6c5b3b65eca678c2ad94ea4e1a69cc7926ad0270e38e880d1975e3a3bb9331e7",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://058964134b5f35d509f2b93d45f6fcf8b4bda4f98315203de730a829d037fb79",
+				"dweb:/ipfs/QmSYLrikgzJu3sXjowB6gi36rf9sPant8aDstUWbD4fXF9"
+			]
+		},
+		"WETH.sol": {
+			"keccak256": "0x31d9f8af616772d228d543d96aa2f240218072b8af26c3e62903cd3d6d277010",
+			"license": "XXX",
+			"urls": [
+				"bzz-raw://aa287502901516e68313a4ed5d120ef782d1aa1b9a4d6b6b73041d9657c762dd",
+				"dweb:/ipfs/QmTj1Z7mLnJAhDcZ9JX3KsP6ynfympPPSYhTeqT5WfeBke"
+			]
+		},
+		"interfaces/ICallee.sol": {
+			"keccak256": "0x039419a7c53737b9e111f4c8160af35965e708754275563afadeec3fb1fd3258",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://76247270e1c98886146242aa61c04252276721860378e5116f418c51829613bd",
+				"dweb:/ipfs/QmTVhZGxpXUpcjyT1v5d1vnbeAK2GPe8ocGXntA2ktcnq2"
+			]
+		},
+		"interfaces/IERC20.sol": {
+			"keccak256": "0xde8f53784d35b3b2803d25bb4eeada0a6cb96d943e68c4627dfa536275b85779",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://591211f07e903b1185c170c7fe60a7919b46425546de22dc0886c37f28ffa6bb",
+				"dweb:/ipfs/QmVKWeQ9eQ4whiVVPtB68ffSJBjUSt4d7ypv5k8djJrkGe"
+			]
+		},
+		"interfaces/IFactory.sol": {
+			"keccak256": "0x568bc22969e6a5973fb28e6fef1e254d33b9964fd2209c336ec2cb628cdaf0bf",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://2517b5445b79b72d26d0f879b280ce74cc01a99066d024f1530e1f175b68c6e7",
+				"dweb:/ipfs/QmPYtLcii9Nou3WRu94qWk1Kgk9fcsLJEVEajC7RtcPNcS"
+			]
+		},
+		"libraries/Math.sol": {
+			"keccak256": "0xa5ad94c27c4c21f6df60a82382ecb473b853242ca15500d14929de16d9cb1fc7",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://01a230dd367b3c6e398f86f17b273187484727b472a2e747907397b11af685e1",
+				"dweb:/ipfs/QmeBAeXpbNzdRasD89oUpi2VPUYarHWxBMtvriFxoT7xd3"
+			]
+		},
 		"libraries/SafeMath.sol": {
 			"keccak256": "0xc623aa57808b3bc4b6e25fc4899f8fd1a47e2ef0ec668780db27badef81971cc",
 			"license": "GPL-3.0",
@@ -124,12 +317,20 @@
 				"dweb:/ipfs/QmNU5w9P3fAmtCtt4jXie1WFwBQFWzzeNjQyESkRok9CtD"
 			]
 		},
-		"myContract.sol": {
-			"keccak256": "0x90203ce317b6fd2e9c410d8a0887862732db5131a12751858f66ee0e61e17def",
+		"libraries/UQ112x112.sol": {
+			"keccak256": "0x1fde021821576e48a9b1f9d45916e6cc447d7d6ccd17d04c4c7dddc67347d83f",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://972e9fd300950d5ee80674585265ac80ce6c2784664a7354b65434f936e717a0",
-				"dweb:/ipfs/QmQ6zSt7M9x6F4zegvH333a1ozWGzogd1K5XdBZEJsp7Pd"
+				"bzz-raw://ec0007645aed355bebc626e0d220973474baac2b47311d272bab99289118bb8f",
+				"dweb:/ipfs/QmcjnL37dcVrLNa2vUQWF9JWEEAcyU4y6vLUji2xK8G2YC"
+			]
+		},
+		"myContract.sol": {
+			"keccak256": "0x7c2d7ecdd3c5ddf2dd3d29ac62387481b34388d9c80654e1e7eed8f6e619b7db",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b3daf69c87242642d6e19a572821a1b83bcea5d907d69f254639fb605d902c26",
+				"dweb:/ipfs/QmNztWPFdNSQFAvR8ESSv6fVGNtTK6NnzLYMdTnLsXR8LY"
 			]
 		}
 	},
