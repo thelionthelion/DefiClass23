@@ -36,29 +36,26 @@ contract myContract {
   }
 
   function getRouterAllowances() public view returns (string memory,uint,uint,uint) {
-    address payable ra = address(uint160(router));
-    address payable pa = address(uint160(weth));
-    uint allowanceWETH = IERC20(pa).allowance(wallet, ra);
-    address payable pa2 = address(uint160(leoToken));
-    uint allowanceLeo = IERC20(pa2).allowance(wallet, ra);
-    address payable pa3 = address(uint160(defiToken));
-    uint allowanceDefi = IERC20(pa3).allowance(wallet, ra);
+    uint allowanceWETH = IERC20(weth).allowance(wallet, router);
+    uint allowanceLeo = IERC20(leoToken).allowance(wallet, router);
+    uint allowanceDefi = IERC20(defiToken).allowance(wallet, router);
     return ("allowance WETH, Leo, DeFi",allowanceWETH,allowanceLeo,allowanceDefi);
   }
 
   // Task 5a) A view function to get the pool balances of a pair of tokens in our DEX.
-  function getPoolReserves(address pair) public view returns (string memory,string memory,uint,string memory,uint) {
-    //address payable p = address(uint160(pair));
+  // Input: The liquidity pool identified by the address of the pair
+  // Output: The reserves available in the liquidity pool 
+  function getPoolReserves(address pair) public view returns (string memory, uint, uint) {
     UniswapV2Pair p = UniswapV2Pair(pair);
-    (uint r1, uint r2,) = p.getReserves();
+    (uint r1, uint r2,) = p.getReserves(); // get the balances of the liquidity pool
     string memory s1 = IERC20(p.token0()).symbol();
     string memory s2 = IERC20(p.token1()).symbol();
-    return ("Reserves of Pair",s1,r1,s2,r2);
+    string memory title = string(abi.encodePacked("Reserves of Pair: ", s1, " / ", s2));
+    return (title,r1,r2);
   }
 
   // Task 5a) A view function to get the pool balances of a pair of tokens in our DEX.
   function getPools(address pair) public view returns (string memory, string[] memory, uint[] memory) {
-    //address payable p = address(uint160(pair));
     UniswapV2Pair p = UniswapV2Pair(pair);
     (uint r1, uint r2,) = p.getReserves();
     string memory s1 = IERC20(p.token0()).symbol();
@@ -66,12 +63,17 @@ contract myContract {
     string[] memory sa = new string[](7);
     sa[0] = s1;
     sa[1] = s2;
-    string memory s = string(abi.encodePacked("a", " ", "concatenated", " ", "string"));
-    sa[2] = s;
     uint[] memory ra = new uint[](7);
     ra[0] = r1;
     ra[1] = r2;
     return ("Reserves of Pair",sa,ra);
+  }
+
+  // Task 5b) A function ... which performs a swap of valA of token A to token C using an intermediary token B 
+  // only if the resulting swap ends with at most valC amount of token C (this swap should be atomic)
+  function task5B(address A, address B, address C, uint256 valA, uint256 valC) public view returns (string) {
+
+    return ("Success");
   }
 
 

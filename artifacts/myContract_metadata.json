@@ -80,19 +80,9 @@
 						"type": "string"
 					},
 					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					},
-					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
 					},
 					{
 						"internalType": "uint256",
@@ -326,11 +316,11 @@
 			]
 		},
 		"myContract.sol": {
-			"keccak256": "0x7c2d7ecdd3c5ddf2dd3d29ac62387481b34388d9c80654e1e7eed8f6e619b7db",
+			"keccak256": "0x02c415eae898a2faf0554fc97414b14c598c4a629d3f42cd91d95c94bee20ccd",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b3daf69c87242642d6e19a572821a1b83bcea5d907d69f254639fb605d902c26",
-				"dweb:/ipfs/QmNztWPFdNSQFAvR8ESSv6fVGNtTK6NnzLYMdTnLsXR8LY"
+				"bzz-raw://31c6bce49c0f8be0f73c811c83c65573d6014a8afef5915d77925e700f758d9b",
+				"dweb:/ipfs/QmZqJrg4WAx4ykJcoFagA7SeVYHzZ1RKnyf6DLX5r5MHGb"
 			]
 		}
 	},
