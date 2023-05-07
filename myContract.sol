@@ -7,7 +7,9 @@ import "./interfaces/IERC20.sol";
 import "./libraries/SafeMath.sol";
 import "./WETH.sol";
 import './interfaces/IFactory.sol';
+import './Router01.sol';
 import './Pair.sol';
+
 
 contract myContract {
   using SafeMath for uint256;
@@ -21,6 +23,7 @@ contract myContract {
   address public constant factory = 0x36C859726f1D72EBC32cA61B7Dc6A3092b416b66;
 
   address public constant pairWETHLeo = 0xC5a8EA7102Db001850f433CcFd4aBdd7D566Bda6;
+  address public constant pairDEFILeo = 0x43F3e87dE8dBB4F34263c3963EbC31f2cB92D0f2;
 
 
   // Create the contract
@@ -54,7 +57,7 @@ contract myContract {
     return (title,r1,r2);
   }
 
-  // Task 5a) A view function to get the pool balances of a pair of tokens in our DEX.
+  // Get all pools with liquidity
   function getPools(address pair) public view returns (string memory, string[] memory, uint[] memory) {
     UniswapV2Pair p = UniswapV2Pair(pair);
     (uint r1, uint r2,) = p.getReserves();
@@ -71,9 +74,22 @@ contract myContract {
 
   // Task 5b) A function ... which performs a swap of valA of token A to token C using an intermediary token B 
   // only if the resulting swap ends with at most valC amount of token C (this swap should be atomic)
-  function task5B(address A, address B, address C, uint256 valA, uint256 valC) public view returns (string) {
+  function task5B(address A, address B, address C, uint256 valA, uint256 valCLimit) public returns (uint) {
+    IUniswapV2Router01 r = IUniswapV2Router01(router);
+    
+    address[] memory path = new address[](3);
+    path[0] = A;
+    path[1] = B;
+    path[2] = C;
+    uint[] memory estimateAmounts = r.getAmountsOut(valA, path);
+    uint valCEstimated = estimateAmounts[2];
+    require(valCEstimated < valCLimit, "Too many tokens C will be received");
 
-    return ("Success");
+    uint[] memory amounts = r.swapExactTokensForTokens(valA,0,path,wallet,block.timestamp+60);
+    uint valCActual = amounts[2];
+    require(valCActual < valCLimit, "Too many tokens C have been be received");
+
+    return valCActual;
   }
 
 
