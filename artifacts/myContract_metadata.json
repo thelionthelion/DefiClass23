@@ -152,7 +152,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "leoToken",
+				"name": "lionToken",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -165,7 +165,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "pairDEFILeo",
+				"name": "pairDEFILion",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -178,7 +178,20 @@
 			},
 			{
 				"inputs": [],
-				"name": "pairWETHLeo",
+				"name": "pairWETHDefi",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "pairWETHLion",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -424,11 +437,11 @@
 			]
 		},
 		"myContract.sol": {
-			"keccak256": "0x8caeb50b8c6c19046353da67db80a4e9dcf8ee211c906cd7ef72ae5c61c70c72",
+			"keccak256": "0xc006df62f6035134ce3e8f1f783bd999d219564ce51b1ffec5eb0d5aefadfe99",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://1328b7ecf6e3bfb5f39d9263245df70125c9528edfcd2eb5742d494e9265a4ff",
-				"dweb:/ipfs/QmPtS8CkJacBA4YCLWpKxY8sqJZi8pVV3yb1bpks5iKBX4"
+				"bzz-raw://45185b968a4a9b4ef7b426f5bd970ee50f2a5dc6aa15aed54915e27cd142b8db",
+				"dweb:/ipfs/QmfPZmXqKfZgsdTCVwoiFLy5BgwTbsGVFyoppLzCEVgKUX"
 			]
 		}
 	},
