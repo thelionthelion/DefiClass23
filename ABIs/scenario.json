@@ -1,0 +1,114 @@
+{
+  "accounts": {
+    "account{0}": "0x39B48918530Ee063BF83728e9acbA694d27776F5"
+  },
+  "linkReferences": {},
+  "transactions": [
+    {
+      "timestamp": 1682455632835,
+      "record": {
+        "value": "0",
+        "inputs": "(address,address,uint256,uint256,uint256,uint256,address,uint256)",
+        "parameters": [
+          "0x2362e2981E60aab56b6287aB814da1716D2f4f6d",
+          "0x7d30a8FB291F8507f9d0eE601336Cec132d97dD0",
+          "10000",
+          "1998",
+          "0",
+          "0",
+          "0x39B48918530Ee063BF83728e9acbA694d27776F5",
+          "16824540631"
+        ],
+        "name": "addLiquidity",
+        "type": "function",
+        "to": "created{undefined}",
+        "from": "account{0}"
+      }
+    },
+    {
+      "timestamp": 1682455644344,
+      "record": {
+        "value": "10000",
+        "inputs": "(address,address,uint256,uint256,uint256,uint256,address,uint256)",
+        "parameters": [
+          "0x2362e2981E60aab56b6287aB814da1716D2f4f6d",
+          "0x7d30a8FB291F8507f9d0eE601336Cec132d97dD0",
+          "10000",
+          "1998",
+          "0",
+          "0",
+          "0x39B48918530Ee063BF83728e9acbA694d27776F5",
+          "16824540631"
+        ],
+        "name": "addLiquidity",
+        "type": "function",
+        "to": "created{undefined}",
+        "from": "account{0}"
+      }
+    },
+    {
+      "timestamp": 1682455818751,
+      "record": {
+        "value": "10000",
+        "inputs": "(address,address,uint256,uint256,uint256,uint256,address,uint256)",
+        "parameters": [
+          "0x7d30a8FB291F8507f9d0eE601336Cec132d97dD0",
+          "0x2362e2981E60aab56b6287aB814da1716D2f4f6d",
+          "1998",
+          "10000",
+          "0",
+          "0",
+          "0x39B48918530Ee063BF83728e9acbA694d27776F5",
+          "16824540631"
+        ],
+        "name": "addLiquidity",
+        "type": "function",
+        "to": "created{undefined}",
+        "from": "account{0}"
+      }
+    },
+    {
+      "timestamp": 1682455903982,
+      "record": {
+        "value": "100000",
+        "inputs": "(address,address,uint256,uint256,uint256,uint256,address,uint256)",
+        "parameters": [
+          "0x7d30a8FB291F8507f9d0eE601336Cec132d97dD0",
+          "0x2362e2981E60aab56b6287aB814da1716D2f4f6d",
+          "1998",
+          "10000",
+          "0",
+          "0",
+          "0x39B48918530Ee063BF83728e9acbA694d27776F5",
+          "16824540631"
+        ],
+        "name": "addLiquidity",
+        "type": "function",
+        "to": "created{undefined}",
+        "from": "account{0}"
+      }
+    },
+    {
+      "timestamp": 1682455927087,
+      "record": {
+        "value": "100000",
+        "inputs": "(address,address,uint256,uint256,uint256,uint256,address,uint256)",
+        "parameters": [
+          "0x7d30a8FB291F8507f9d0eE601336Cec132d97dD0",
+          "0x2362e2981E60aab56b6287aB814da1716D2f4f6d",
+          "1998",
+          "10000",
+          "0",
+          "0",
+          "0x39B48918530Ee063BF83728e9acbA694d27776F5",
+          "16824540631"
+        ],
+        "name": "addLiquidity",
+        "type": "function",
+        "to": "created{undefined}",
+        "from": "account{0}"
+      }
+    }
+  ],
+  "abis": {}
+}

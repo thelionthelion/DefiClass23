@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: XXX
+//pragma solidity =0.8.10;
 pragma solidity =0.6.12;
 
 
@@ -8,6 +9,7 @@ import './libraries/Library.sol';
 import './interfaces/IERC20.sol';
 import './interfaces/IWETH.sol';
 import './interfaces/IRouter.sol';
+import "hardhat/console.sol";
 
 contract UniswapV2Router01 is IUniswapV2Router01{
     address public immutable override factory;
@@ -21,6 +23,7 @@ contract UniswapV2Router01 is IUniswapV2Router01{
     constructor(address _factory, address _WETH) public {
         factory = _factory;
         WETH = _WETH;
+        console.log("constructor END");
     }
 
     receive() external payable {
@@ -36,6 +39,7 @@ contract UniswapV2Router01 is IUniswapV2Router01{
         uint amountAMin,
         uint amountBMin
     ) private returns (uint amountA, uint amountB) {
+        console.log("log 1");
         // create the pair if it doesn't exist yet
         if (IUniswapV2Factory(factory).getPair(tokenA, tokenB) == address(0)) {
             IUniswapV2Factory(factory).createPair(tokenA, tokenB);

@@ -18,8 +18,7 @@ contract DefiToken is IERC20 {
 
   mapping (address => mapping (address => uint256)) private _allowed;
 
-  // Token constructor
-  constructor () {
+   constructor () {
     _balances[msg.sender] = _totalSupply;
     emit Transfer(address(0), msg.sender , _totalSupply);
   }
@@ -38,7 +37,8 @@ contract DefiToken is IERC20 {
   function allowance(address owner,address spender)public override view returns (uint256){
     return _allowed[owner][spender];
   }
-
+  
+  
   function transfer(address to, uint256 value) public override returns (bool) {
     require(value <= _balances[msg.sender]);
     require(to != address(0));
